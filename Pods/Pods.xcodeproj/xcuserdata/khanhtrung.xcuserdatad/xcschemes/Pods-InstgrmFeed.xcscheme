@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0820"
+   LastUpgradeVersion = "0700"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "13DB039C1E7D7C8200A918FE"
-               BuildableName = "InstgrmFeed.app"
-               BlueprintName = "InstgrmFeed"
-               ReferencedContainer = "container:InstgrmFeed.xcodeproj">
+               BlueprintIdentifier = "E852F9ABDB4526CDFF9D71EF7EAE41C1"
+               BuildableName = "Pods_InstgrmFeed.framework"
+               BlueprintName = "Pods-InstgrmFeed"
+               ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -29,15 +29,6 @@
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
       </Testables>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "13DB039C1E7D7C8200A918FE"
-            BuildableName = "InstgrmFeed.app"
-            BlueprintName = "InstgrmFeed"
-            ReferencedContainer = "container:InstgrmFeed.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -51,16 +42,15 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "13DB039C1E7D7C8200A918FE"
-            BuildableName = "InstgrmFeed.app"
-            BlueprintName = "InstgrmFeed"
-            ReferencedContainer = "container:InstgrmFeed.xcodeproj">
+            BlueprintIdentifier = "E852F9ABDB4526CDFF9D71EF7EAE41C1"
+            BuildableName = "Pods_InstgrmFeed.framework"
+            BlueprintName = "Pods-InstgrmFeed"
+            ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -70,16 +60,6 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "13DB039C1E7D7C8200A918FE"
-            BuildableName = "InstgrmFeed.app"
-            BlueprintName = "InstgrmFeed"
-            ReferencedContainer = "container:InstgrmFeed.xcodeproj">
-         </BuildableReference>
-      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

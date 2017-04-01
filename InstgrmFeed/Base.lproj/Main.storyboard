@@ -1,26 +1,209 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="BIJ-Br-7PD">
+    <device id="retina5_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Instagram Feed-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="PhotosViewController" customModule="InstgrmFeed" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                        <viewControllerLayoutGuide type="top" id="JUD-Et-jGg"/>
+                        <viewControllerLayoutGuide type="bottom" id="fd1-LQ-jHB"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="451" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="O2f-MQ-MC3">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PhotoCell" rowHeight="451" id="5xY-RU-lca" customClass="PhotosTableViewCell" customModule="InstgrmFeed" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="451"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5xY-RU-lca" id="T4I-44-4gZ">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="450.66666666666669"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="UserName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ATE-WZ-ZVI">
+                                                    <rect key="frame" x="66" y="23" width="340" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vdb-VE-W0L">
+                                                    <rect key="frame" x="8" y="8" width="50" height="50"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="w1B-eL-ZuG">
+                                                    <rect key="frame" x="0.0" y="66" width="414" height="414"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="photoImageView" destination="w1B-eL-ZuG" id="lWq-T2-HL6"/>
+                                            <outlet property="userImageView" destination="vdb-VE-W0L" id="dew-Y3-Lkl"/>
+                                            <outlet property="userName" destination="ATE-WZ-ZVI" id="M4C-bi-Mmu"/>
+                                            <segue destination="u8v-Lg-VGk" kind="push" identifier="detailPhoto" id="HCt-DM-GwL"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Instagram Feed" id="iiq-Uu-dOW"/>
+                    <connections>
+                        <outlet property="tableView" destination="O2f-MQ-MC3" id="opz-Ui-mxO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="672" y="152"/>
+        </scene>
+        <!--Detail-->
+        <scene sceneID="2Vn-39-d2x">
+            <objects>
+                <viewController id="u8v-Lg-VGk" customClass="PhotoDetailsViewController" customModule="InstgrmFeed" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ywy-2t-AmP"/>
+                        <viewControllerLayoutGuide type="bottom" id="5qa-lZ-lDd"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="f0A-92-0J4">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gGz-jk-Cyl">
+                                <rect key="frame" x="0.0" y="57" width="414" height="445"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="Z4N-dG-ZEM" appends="YES" id="B19-LJ-7tN"/>
+                                </connections>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="5qa-lZ-lDd" firstAttribute="top" secondItem="gGz-jk-Cyl" secondAttribute="bottom" constant="234" id="OHL-wh-eHr"/>
+                            <constraint firstAttribute="trailing" secondItem="gGz-jk-Cyl" secondAttribute="trailing" id="dUQ-wG-4Up"/>
+                            <constraint firstItem="gGz-jk-Cyl" firstAttribute="top" secondItem="f0A-92-0J4" secondAttribute="topMargin" constant="57" id="o3R-tu-tC5"/>
+                            <constraint firstItem="gGz-jk-Cyl" firstAttribute="leading" secondItem="f0A-92-0J4" secondAttribute="leading" id="zH1-3f-0vx"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Detail" id="KUx-yn-AmM"/>
+                    <connections>
+                        <outlet property="photoImageView" destination="gGz-jk-Cyl" id="Zdl-hj-kbp"/>
+                        <segue destination="sNZ-Ov-vFn" kind="modal" identifier="FullScreenPhotoSegue" modalPresentationStyle="fullScreen" id="7ip-4M-v5G"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="T9Z-Ke-h4R" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Z4N-dG-ZEM">
+                    <connections>
+                        <action selector="didTap:" destination="u8v-Lg-VGk" id="Up2-1z-NaN"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="1220.5" y="152.5"/>
+        </scene>
+        <!--Full Screen Photo View Controller-->
+        <scene sceneID="aB8-xR-Pel">
+            <objects>
+                <viewController id="sNZ-Ov-vFn" customClass="FullScreenPhotoViewController" customModule="InstgrmFeed" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2Qo-OG-31u"/>
+                        <viewControllerLayoutGuide type="bottom" id="H4t-V7-rZr"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="BGJ-50-ygD">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" maximumZoomScale="3" translatesAutoresizingMaskIntoConstraints="NO" id="N3d-Bm-mjt">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <subviews>
+                                    <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vil-MB-VZD">
+                                        <rect key="frame" x="0.0" y="161" width="415" height="415"/>
+                                        <gestureRecognizers/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="415" id="Jby-UL-O6r"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="vil-MB-VZD" secondAttribute="trailing" constant="-1" id="Avi-fl-OU3"/>
+                                    <constraint firstItem="vil-MB-VZD" firstAttribute="centerX" secondItem="N3d-Bm-mjt" secondAttribute="centerX" id="EPt-jd-Q3g"/>
+                                    <constraint firstItem="vil-MB-VZD" firstAttribute="centerY" secondItem="N3d-Bm-mjt" secondAttribute="centerY" id="O37-fI-KuX"/>
+                                    <constraint firstAttribute="bottom" secondItem="vil-MB-VZD" secondAttribute="bottom" constant="160" id="gcf-XF-OSH"/>
+                                    <constraint firstItem="vil-MB-VZD" firstAttribute="leading" secondItem="N3d-Bm-mjt" secondAttribute="leading" id="n4q-Rf-qhV"/>
+                                </constraints>
+                            </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aYX-xq-6Jf">
+                                <rect key="frame" x="382" y="12" width="24" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="kr5-pa-l8c"/>
+                                    <constraint firstAttribute="width" constant="24" id="stQ-mB-jMJ"/>
+                                </constraints>
+                                <state key="normal" title="Close" image="close-button"/>
+                                <connections>
+                                    <action selector="dissmisFullScreenView:" destination="sNZ-Ov-vFn" eventType="touchUpInside" id="31r-NY-o3D"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="aYX-xq-6Jf" firstAttribute="top" secondItem="BGJ-50-ygD" secondAttribute="top" constant="12" id="08U-2b-Z0w"/>
+                            <constraint firstItem="N3d-Bm-mjt" firstAttribute="bottom" secondItem="H4t-V7-rZr" secondAttribute="top" id="0mm-tz-hOD"/>
+                            <constraint firstItem="aYX-xq-6Jf" firstAttribute="leading" secondItem="BGJ-50-ygD" secondAttribute="leading" constant="382" id="2Cy-i4-9V5"/>
+                            <constraint firstItem="H4t-V7-rZr" firstAttribute="top" secondItem="aYX-xq-6Jf" secondAttribute="bottom" constant="692" id="MGq-fM-ydd"/>
+                            <constraint firstItem="N3d-Bm-mjt" firstAttribute="top" secondItem="BGJ-50-ygD" secondAttribute="top" id="RFs-zx-Ez4"/>
+                            <constraint firstItem="N3d-Bm-mjt" firstAttribute="leading" secondItem="BGJ-50-ygD" secondAttribute="leading" id="RgR-8f-yPG"/>
+                            <constraint firstAttribute="trailing" secondItem="N3d-Bm-mjt" secondAttribute="trailing" id="XZ9-Bg-6zp"/>
+                            <constraint firstAttribute="trailing" secondItem="aYX-xq-6Jf" secondAttribute="trailing" constant="8" id="vu8-DV-Ivh"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="photoImageView" destination="vil-MB-VZD" id="aAn-pV-9NP"/>
+                        <outlet property="scrollView" destination="N3d-Bm-mjt" id="fwL-DL-ZnA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nA1-JG-Dx0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1738.5" y="152.5"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="L7x-pV-npH">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="BIJ-Br-7PD" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="pBi-n9-coi">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="01C-uZ-QKZ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3kQ-pz-KSg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="85.5" y="152.5"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="close-button" width="566" height="800"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina5_5.fullscreen"/>
+    </simulatedMetricsContainer>
 </document>
